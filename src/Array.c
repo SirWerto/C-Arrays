@@ -123,7 +123,10 @@ bool equal(array * a1, array * a2){
 return true;
 }
 
+//Sort
+void sort(array * a, bool (*compare)(void * str1, void * str2)){
 
+}
 
 void * AError(void * e, char * s){
 	printf("\nERROR: %s ", s);

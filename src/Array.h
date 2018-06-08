@@ -3,10 +3,6 @@
 #ifndef ARRAY_H_
 #define ARRAY_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
 
 //DEFINES
 #define BUFF 10
@@ -48,6 +44,9 @@ size_t size(array * a);
 bool isempty(array * a);
 
 void * get(array * a, size_t i);
+
+//Sort
+void sort(array * a, bool (*compare)(void * str1, void * str2));
 
 //Erros
 void * AError(void * e, char * s);
