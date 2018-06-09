@@ -18,6 +18,7 @@ typedef struct s_array{
 
 //FUNCTIONS
 
+	//CREATE AND DESTROY
 array * new(size_t d_str){
 	array * a =(array*) malloc(sizeof(array));
 	if(!a)
@@ -47,6 +48,7 @@ void destroy(array * a){
 	a = NULL;
 }
 
+	//MODIFIE
 bool add(array * a, void * str){	//Add an element at the end
 	if(!a || !a->ar || !str || a->dstr != sizeof(&str))
 		return false;
@@ -66,9 +68,18 @@ bool add(array * a, void * str){	//Add an element at the end
 
 return true;}	
 
-void * remove_o(array * a, void * str){
+bool remove_o(array * a, void * str){
+	if(!a || !a->ar || !str || a->dstr != sizeof(&str))
+		return false;
+	for (int i = 0; i<a->n; i++){
+		if(!(memcmp(str, a->ar[i, a->d_str]))){
+			for(int j = i+1; j<a->n; j++)
+				a->ar[j-1] = a->ar[j];
+			return true; 
+		}
+	}
 
-return NULL;}	
+return false;}	
 
 void * remove_i(array * a, int index){
 return NULL;}

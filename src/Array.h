@@ -10,14 +10,6 @@
 //STRUCT
 typedef struct s_array array;
 
-/*typedef struct s_array{
-	size_t n;	//Number of actual elements
-	size_t buff;	//Diff betwin de array and n
-	size_t nr;	//Real dimension of the array
-	size_t dstr;	//Dimension of the struct
-	void * ar;	//The array
-}s_array;*/
-
 
 //FUNCTIONS
 
