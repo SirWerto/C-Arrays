@@ -71,12 +71,17 @@ return true;}
 bool remove_o(array * a, void * str){
 	if(!a || !a->ar || !str || a->dstr != sizeof(&str))
 		return false;
+	unsigned char * point =(unsigned char*) a->ar;
 	for (int i = 0; i<a->n; i++){
-		if(!(memcmp(str, a->ar[i, a->d_str]))){
-			for(int j = i+1; j<a->n; j++)
-				a->ar[j-1] = a->ar[j];
-			return true; 
+		if(!(memcmp(str, point, a->dstr))){
+			for(int j = i; j<a->n; j++){
+				if(!(memcpy(point, point+a->dstr, a->dstr)))
+					return false;
+				point += a->dstr;
+			return true;
+			} 
 		}
+	point += a->dstr;
 	}
 
 return false;}	

@@ -21,7 +21,7 @@ void destroy(array * a);
 //Modifie
 bool add(array * a, void * str);	//Add an element at the end
 
-void * remove_o(array * a, void * str);	//Remove the first equal element
+bool remove_o(array * a, void * str);	//Remove the first equal element
 
 void * remove_i(array * a, int index);	//Remove the i element
 
